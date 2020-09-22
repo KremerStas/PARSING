@@ -1,21 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from peewee import *
-
-db = SqliteDatabase('films.db')
-
-
-class Films(Model):
-    title = CharField()
-    years = CharField()
-    country = CharField()
-    genre = CharField()
-
-    class Meta:
-        database = db
-
-
-Films.create_table()
+from models import Films
 
 
 for i in range(1, 966):
